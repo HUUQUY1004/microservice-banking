@@ -1,0 +1,26 @@
+name: Build & Push Notification Service
+
+on:
+  push:
+    paths:
+      - "services/notification-service/**"
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - uses: docker/build-push-action@v5
+        with:
+          context: ./services/notification-service/notification-service
+          push: true
+          tags: bridget1004/mini-banking-notification-service:latest

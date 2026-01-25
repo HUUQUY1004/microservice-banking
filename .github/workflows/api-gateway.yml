@@ -1,0 +1,30 @@
+name: Build & Push API Gateway
+
+on:
+  push:
+    paths:
+      - "api-gateway/**"
+      - ".github/workflows/api-gateway.yml"
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build & Push API Gateway
+        uses: docker/build-push-action@v5
+        with:
+          context: ./api-gateway/api-gateway
+          push: true
+          tags: bridget1004/mini-banking-api-gateway:latest
