@@ -333,7 +333,7 @@ const CounterAdminDashboard = ({ user }) => {
         </div>
       </div>
 
-      {/* Modal thêm/sửa nhân viên */}
+      {/* Modal add/ update staff */}
       {showStaffModal && (
         <div className="modal show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
           <div className="modal-dialog">
