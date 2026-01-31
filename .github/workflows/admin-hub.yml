@@ -10,7 +10,7 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
+    environment: DOCKERHUB_USERNAME
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build & Push Admin Hub
         uses: docker/build-push-action@v5
