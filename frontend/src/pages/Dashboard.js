@@ -86,7 +86,7 @@ const Dashboard = ({ user, transactions, onFreezeToggle }) => {
           </div>
           <div className="d-none d-md-flex align-items-center gap-2 text-muted small">
             <i className="far fa-user-circle me-1"></i>
-            <span>{user?.email}</span>
+            <span className='db'>{user?.email}</span>
           </div>
         </div>
 

@@ -524,17 +524,17 @@ const Settings = ({ user, onUpdate }) => {
         {kycStatus === 'APPROVED' || kycStatus === 'VERIFIED' ? (
           <div className="alert alert-success">
             <i className="fas fa-check-circle me-2"></i>
-            Tài khoản của bạn đã được xác thực thành công. Bạn có thể sử dụng đầy đủ các tính năng của hệ thống.
+            <p>Tài khoản của bạn đã được xác thực thành công. Bạn có thể sử dụng đầy đủ các tính năng của hệ thống.</p>
           </div>
         ) : kycStatus === 'PENDING' ? (
           <div className="alert alert-warning">
             <i className="fas fa-clock me-2"></i>
-            Yêu cầu xác thực của bạn đang được xem xét. Vui lòng chờ phản hồi từ hệ thống.
+            <p>Yêu cầu xác thực của bạn đang được xem xét. Vui lòng chờ phản hồi từ hệ thống.</p>
           </div>
         ) : kycStatus === 'REJECTED' ? (
           <div className="alert alert-danger">
             <i className="fas fa-times-circle me-2"></i>
-            Yêu cầu xác thực của bạn đã bị từ chối. Vui lòng kiểm tra lại thông tin và tài liệu đã gửi, sau đó gửi lại yêu cầu.
+            <p>Yêu cầu xác thực của bạn đã bị từ chối. Vui lòng kiểm tra lại thông tin và tài liệu đã gửi, sau đó gửi lại yêu cầu.</p>
           </div>
         ) : null}
 
@@ -850,7 +850,7 @@ const Settings = ({ user, onUpdate }) => {
                 ) : (
                   <>
                     <i className="fas fa-paper-plane me-2"></i>
-                    Gửi yêu cầu xác thực
+                    <p>Gửi yêu cầu xác thực</p>
                   </>
                 )}
               </button>
@@ -860,7 +860,7 @@ const Settings = ({ user, onUpdate }) => {
           {(kycStatus === 'APPROVED' || kycStatus === 'VERIFIED') && (
             <div className="alert alert-info">
               <i className="fas fa-info-circle me-2"></i>
-              Tài khoản của bạn đã được xác thực. Nếu cần cập nhật thông tin, vui lòng liên hệ bộ phận hỗ trợ.
+              <p>Tài khoản của bạn đã được xác thực. Nếu cần cập nhật thông tin, vui lòng liên hệ bộ phận hỗ trợ.</p>
             </div>
           )}
         </form>

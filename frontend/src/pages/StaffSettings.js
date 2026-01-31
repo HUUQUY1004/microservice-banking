@@ -40,7 +40,7 @@ const StaffSettings = ({ user, onUpdate }) => {
             email: user?.email || '',
           });
         }
-        // Nhân viên không được tự đổi họ tên/email; chỉ admin (quầy/tổng)
+        //  Staff not allowed to change name/email; only admins (counter/general)
         setIsReadonlyProfile(true);
       } catch (err) {
         console.error('Error fetching user data:', err);
