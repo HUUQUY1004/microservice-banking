@@ -25,7 +25,7 @@ const KycRequired = () => {
       const response = await getMyKycStatusApi(token);
       if (response && response.data) {
         setKycStatus(response.data);
-        // Nếu đã được duyệt, chuyển về trang ban đầu
+        // if KYC is approved, redirect to the original page
         if (response.data.status === 'APPROVED') {
           navigate(from, { replace: true });
         }
