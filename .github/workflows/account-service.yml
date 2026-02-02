@@ -22,4 +22,6 @@ jobs:
         with:
           context: ./services/account-service/account-service
           push: true
-          tags: bridget1004/mini-banking-account-service:latest
+          tags: 
+            bridget1004/mini-banking-account-service:${{github.sha}}
+            bridget1004/mini-banking-account-service:latest

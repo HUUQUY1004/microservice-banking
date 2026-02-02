@@ -22,4 +22,6 @@ jobs:
         with:
           context: ./services/notification-service/notification-service
           push: true
-          tags: bridget1004/mini-banking-notification-service:latest
+          tags: 
+            bridget1004/mini-banking-notification-service:${{github.sha}}
+            bridget1004/mini-banking-notification-service:latest

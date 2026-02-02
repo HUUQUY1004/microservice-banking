@@ -22,4 +22,6 @@ jobs:
         with:
           context: ./services/log-service/log-service
           push: true
-          tags: bridget1004/mini-banking-log-service:latest
+          tags: 
+            bridget1004/mini-banking-log-service:${{github.sha}}
+            bridget1004/mini-banking-log-service:latest

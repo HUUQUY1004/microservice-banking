@@ -24,4 +24,6 @@ jobs:
         with:
           context: ./banking-admin-hub-main/
           push: true
-          tags: bridget1004/mini-banking-admin-hub:latest
+          tags: 
+            bridget1004/mini-banking-admin-hub:${{github.sha}}
+            bridget1004/mini-banking-admin-hub:latest

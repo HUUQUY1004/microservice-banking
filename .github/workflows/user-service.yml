@@ -22,4 +22,6 @@ jobs:
         with:
           context: ./services/user-service/user-service
           push: true
-          tags: bridget1004/mini-banking-user-service:latest
+          tags: 
+            bridget1004/mini-banking-user-service:${{github.sha}}
+            bridget1004/mini-banking-user-service:latest

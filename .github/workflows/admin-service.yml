@@ -23,4 +23,6 @@ jobs:
         with:
           context: ./services/admin-service/admin-service
           push: true
-          tags: bridget1004/mini-banking-admin-service:latest
+          tags: 
+            bridget1004/mini-banking-admin-service:${{github.sha}}
+            bridget1004/mini-banking-admin-service:latest

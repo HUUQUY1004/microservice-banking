@@ -26,4 +26,6 @@ jobs:
         with:
           context: ./api-gateway/api-gateway
           push: true
-          tags: bridget1004/mini-banking-api-gateway:latest
+          tags: 
+            bridget1004/mini-banking-api-gateway:${{github.sha}}
+            bridget1004/mini-banking-api-gateway:latest

@@ -22,4 +22,6 @@ jobs:
         with:
           context: ./services/transaction-service/transaction-service
           push: true
-          tags: bridget1004/mini-banking-transaction-service:latest
+          tags: 
+            bridget1004/mini-banking-transaction-service:${{github.sha}} 
+            bridget1004/mini-banking-transaction-service:latest
