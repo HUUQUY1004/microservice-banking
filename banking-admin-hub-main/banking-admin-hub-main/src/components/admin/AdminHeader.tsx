@@ -2,6 +2,7 @@ import { Bell, Search, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +18,11 @@ interface AdminHeaderProps {
 }
 
 export function AdminHeader({ title, subtitle }: AdminHeaderProps) {
+  const navigate = useNavigate();
+  const handleSettingsClick = () => {
+    navigate('/admin/settings');
+  }
+
   return (
     <header className="sticky top-0 z-30 flex h-20 items-center justify-between border-b border-border bg-background/95 px-8 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div>
@@ -71,7 +77,7 @@ export function AdminHeader({ title, subtitle }: AdminHeaderProps) {
             <DropdownMenuLabel>Tài khoản của tôi</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Hồ sơ</DropdownMenuItem>
-            <DropdownMenuItem>Cài đặt</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => handleSettingsClick()}>Cài đặt</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="text-destructive">
               Đăng xuất
